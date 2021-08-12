@@ -6,28 +6,28 @@ require_relative "lib/private"
 class SpanOps < Formula
   desc "span-ops allows you to interact with the supplier services that SPAN uses."
   homepage "https://github.com/SPANDigital/span-ops"
-  version "0.1.11"
+  version "0.1.12"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.11/span-ops_0.1.11_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f79381369390ffcc2be11ee25b6e0c7fe29d911e69df87b81c91cb6cce566ea7"
+      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.12/span-ops_0.1.12_Darwin_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "145782779c12e5a9f8546c8811a495aa29d381cbed1b6c282457a224677f884b"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.11/span-ops_0.1.11_Darwin_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "5eb5b38f80c808739edef790186c8e6143b53c360a583da1fad68ca015999a91"
+      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.12/span-ops_0.1.12_Darwin_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "9c827fbd376579dc04c0d19578e5728e738568aa250ec5e5ee8d0d5166e79cf5"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.11/span-ops_0.1.11_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "e739439c3aa7cc72f8306285ae0dbd833ea1be3a221b34ed66e7a9ef7f356a19"
+      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.12/span-ops_0.1.12_Linux_x86_64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "1ac54daf16db38fbe7d04939f7b03dbf533c8007ba099db5e5e49a942f11b584"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.11/span-ops_0.1.11_Linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "99ed394191eac8b8ccc0b875e9e36d47b52de841c254a7cb6a74dae019f6a8c7"
+      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.12/span-ops_0.1.12_Linux_arm64.tar.gz", :using => GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "c938c1208b37ceafbd9f75d8cf3273310d3f3963bdd645bc0083272e551ca3b1"
     end
   end
 
