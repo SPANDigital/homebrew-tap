@@ -5,24 +5,29 @@
 class SpanOps < Formula
   desc "span-ops allows you to interact with the supplier services that SPAN uses."
   homepage "https://github.com/SPANDigital/span-ops"
-  version "0.1.4"
+  version "0.1.7"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.4/span-ops_0.1.4_Darwin_x86_64.tar.gz"
-    sha256 "91c5dbf03b9c50377cca758cb43277709c017cedada6a3ef193dda4e274b75a6"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.7/span-ops_0.1.7_Darwin_x86_64.tar.gz", :using => GitDownloadStrategy
+      sha256 "eb7f39ea01a3a1d11e2ba8b6eba64bba97075524b767f743752e706e58c23401"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.7/span-ops_0.1.7_Darwin_arm64.tar.gz", :using => GitDownloadStrategy
+      sha256 "2df648816634bd191d96b0650b055225ac074b1572e941387a595f2cbc7d5a17"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.4/span-ops_0.1.4_Darwin_arm64.tar.gz"
-    sha256 "2b007160d0cd4fd3ad7019dcf326d85d9ddee803ab7926159431c60946a6b7c8"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.4/span-ops_0.1.4_Linux_x86_64.tar.gz"
-    sha256 "4f49e30572e321936b78607d306bdab3ffea40e71a376bf20c0f95d5f2d85611"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.4/span-ops_0.1.4_Linux_arm64.tar.gz"
-    sha256 "b8e83c0c831f137eaced34ad2064d5c135e6be704f657e23d73479bba5f394c7"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.7/span-ops_0.1.7_Linux_x86_64.tar.gz", :using => GitDownloadStrategy
+      sha256 "e50ef178890fb7e42ecdc53d41c6da5061f57179ed5f840126b9ba95d78dca24"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/SPANDigital/span-ops/releases/download/v0.1.7/span-ops_0.1.7_Linux_arm64.tar.gz", :using => GitDownloadStrategy
+      sha256 "1f51175440914132e9c8d66a3cf336e46abccc555269b9fb11e344417321e49f"
+    end
   end
 
   def install
