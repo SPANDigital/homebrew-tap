@@ -80,7 +80,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   end
 
   def download_url
-    "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
+    "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/downloads/#{asset_id}"
   end
 
   private
