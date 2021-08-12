@@ -9,10 +9,16 @@ Homebrew tap for SPAN
 
 ``brew update``
 
-## span-ops
+## Available formula
+
+### span-ops
 
 [![goreleaser](https://github.com/SPANDigital/span-ops/actions/workflows/release.yml/badge.svg)](https://github.com/SPANDigital/span-ops/actions/workflows/release.yml)
 
-### Installing
+#### Installing
 
-### Update updating
+``brew install span-ops``
+
+#### Upgrading
+
+``brew upgrade span-ops``
