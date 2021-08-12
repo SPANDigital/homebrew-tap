@@ -89,7 +89,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
     puts "URL worked out to be #{download_url}"
-    curl_download download_url, "--header", "Accept: application/octet-stream", to: temporary_path
+    curl_download download_url, "-sL", "Authorization", "token #{@github_token}","--header", "Accept: application/octet-stream", to: temporary_path
   end
 
   def asset_id
