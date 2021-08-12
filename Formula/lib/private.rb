@@ -80,7 +80,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   end
 
   def download_url
-    "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/downloads/#{asset_id}"
+    "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
   end
 
   private
@@ -88,6 +88,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   def _fetch(url:, resolved_url:, timeout:)
     # HTTP request header `Accept: application/octet-stream` is required.
     # Without this, the GitHub API will respond with metadata, not binary.
+    puts "URL worked out to be #{download_url}"
     curl_download download_url, "--header", "Accept: application/octet-stream", to: temporary_path
   end
 
