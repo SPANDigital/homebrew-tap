@@ -11,7 +11,7 @@ Homebrew tap for SPAN
 
 ## Github Personal Access Token for private repos
 
-To access private repos you will need to generate a [personal acess token](https://github.com/settings/tokens).
+To access private repos you will need to generate a [personal acess token](https://github.com/settings/tokens) with *repo* access.
 
 Set this as an environment variable:
 ``export HOMEBREW_GITHUB_API_TOKEN=xxxxxx``
