@@ -11,7 +11,6 @@ require "download_strategy"
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   require "utils/formatter"
   require "utils/github"
-  require "utils/github/api"
 
   def initialize(url, name, version, **meta)
     super
@@ -65,6 +64,8 @@ end
 # of your formula. This download strategy uses GitHub access tokens (in the
 # environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
 class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDownloadStrategy
+  require "utils/github/api"
+  
   def initialize(url, name, version, **meta)
     super
   end
