@@ -5,20 +5,20 @@
 class Presidium < Formula
   desc "Presidium is a software documentation management system for agile teams"
   homepage "https://github.com/spandigital/presidium"
-  version "1.0.0-rfv.243"
+  version "1.0.0-rfv.244"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/presidium/releases/download/v1.0.0-rfv.243/presidium_1.0.0-rfv.243_Darwin_arm64.tar.gz"
-      sha256 "71f18dcbaa3ce224ba8879e56045f64e289de1ee904c4f1f9bf1006135512865"
+      url "https://github.com/SPANDigital/presidium/releases/download/v1.0.0-rfv.244/presidium_1.0.0-rfv.244_Darwin_arm64.tar.gz"
+      sha256 "477d89b2e606ab09fab81d0d0171e0e197cb82d7a09db5209dcacd31f7d0b506"
 
       def install
         bin.install "presidium"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium/releases/download/v1.0.0-rfv.243/presidium_1.0.0-rfv.243_Darwin_x86_64.tar.gz"
-      sha256 "afea5c0ee9745a6aa213849da161d679af69e21f66c701c9324d8d7c6c8e257e"
+      url "https://github.com/SPANDigital/presidium/releases/download/v1.0.0-rfv.244/presidium_1.0.0-rfv.244_Darwin_x86_64.tar.gz"
+      sha256 "01647c09298dc1169262bff6fc46588b978dc0913e6beacbb4c3afcd061c33bd"
 
       def install
         bin.install "presidium"
@@ -27,17 +27,17 @@ class Presidium < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/presidium/releases/download/v1.0.0-rfv.243/presidium_1.0.0-rfv.243_Linux_arm64.tar.gz"
-      sha256 "6da1e6be24f29c9e45b0287c391f6203b53ae01ef20704e9e56e39ddc8fbba12"
+    if Hardware::CPU.intel?
+      url "https://github.com/SPANDigital/presidium/releases/download/v1.0.0-rfv.244/presidium_1.0.0-rfv.244_Linux_x86_64.tar.gz"
+      sha256 "3c0cd87c1f656f72495d8179f417244de740c401ecf6e4fcf9fd0fd81a3ba13b"
 
       def install
         bin.install "presidium"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium/releases/download/v1.0.0-rfv.243/presidium_1.0.0-rfv.243_Linux_x86_64.tar.gz"
-      sha256 "e6bcdaaf5a57e132466e271fbea07d038223dada9558c051f6f09951dcaf6c5d"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/SPANDigital/presidium/releases/download/v1.0.0-rfv.244/presidium_1.0.0-rfv.244_Linux_arm64.tar.gz"
+      sha256 "5d314dd26cb82b418574c8783cb4c80783b90d6855b8c685c6554f3e2444e80d"
 
       def install
         bin.install "presidium"
