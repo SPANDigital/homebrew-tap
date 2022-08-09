@@ -5,20 +5,20 @@
 class PresidiumJsonSchema < Formula
   desc "Presidium is a software documentation management system for agile teams"
   homepage "https://github.com/spandigital/presidium"
-  version "0.1.1"
+  version "0.1.2"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-json-schema/releases/download/v0.1.1/presidium-json-schema_0.1.1_Darwin_x86_64.tar.gz"
-      sha256 "6a318a0870e00b657b413df65072ec93c4328e0a1e667234c0a63e9575fd0006"
+      url "https://github.com/SPANDigital/presidium-json-schema/releases/download/v0.1.2/presidium-json-schema_0.1.2_Darwin_x86_64.tar.gz"
+      sha256 "9bf45efa0be10a7af6e0a2ca37db36790563734afb5b2a386c7fc5fb68625e78"
 
       def install
         bin.install "presidium-json-schema"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/presidium-json-schema/releases/download/v0.1.1/presidium-json-schema_0.1.1_Darwin_arm64.tar.gz"
-      sha256 "1ca80c46a5980326d2f69a52d36d3e470ce85beefb856e5de10ef503fed6d12b"
+      url "https://github.com/SPANDigital/presidium-json-schema/releases/download/v0.1.2/presidium-json-schema_0.1.2_Darwin_arm64.tar.gz"
+      sha256 "c84065a105fe2a35c958f123035c4a502848ec73dc0e1a7c4eef9e956a5fcc5a"
 
       def install
         bin.install "presidium-json-schema"
@@ -27,17 +27,17 @@ class PresidiumJsonSchema < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/presidium-json-schema/releases/download/v0.1.1/presidium-json-schema_0.1.1_Linux_arm64.tar.gz"
-      sha256 "3d8430e9bf139c0851140a26e6db8471fc1413699815023a86bd929fe151ecc7"
+    if Hardware::CPU.intel?
+      url "https://github.com/SPANDigital/presidium-json-schema/releases/download/v0.1.2/presidium-json-schema_0.1.2_Linux_x86_64.tar.gz"
+      sha256 "78171341ad86467678e2050dc31a0a3b5867526bcb0f296a4b593730662055c7"
 
       def install
         bin.install "presidium-json-schema"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-json-schema/releases/download/v0.1.1/presidium-json-schema_0.1.1_Linux_x86_64.tar.gz"
-      sha256 "168257c983a428a70b103ed55a5da46b79807444d5a6629eb113a16a9284aead"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/SPANDigital/presidium-json-schema/releases/download/v0.1.2/presidium-json-schema_0.1.2_Linux_arm64.tar.gz"
+      sha256 "f27b8a8c159226aa79e314511c2190721d51abfd23d37670548ab8184bda65c8"
 
       def install
         bin.install "presidium-json-schema"
