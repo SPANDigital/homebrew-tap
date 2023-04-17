@@ -30,6 +30,11 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     "https://#{@github_token}@github.com/#{@owner}/#{@repo}/#{@filepath}"
   end
 
+  def resolve_url_basename_time_file_size(url, timeout: nil)
+    url = download_url
+    super
+  end
+
   private
 
   def _fetch(url:, resolved_url:, timeout:)
@@ -58,10 +63,6 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     raise CurlDownloadStrategyError, message
   end
 
-  def resolve_url_basename_time_file_size(url, timeout: nil)
-    url = download_url
-    super
-  end
 end
 
 # GitHubPrivateRepositoryReleaseDownloadStrategy downloads tarballs from GitHub
@@ -85,6 +86,11 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
 
   def download_url
     "https://#{@github_token}@api.github.com/repos/#{@owner}/#{@repo}/releases/assets/#{asset_id}"
+  end
+
+  def resolve_url_basename_time_file_size(url, timeout: nil)
+    url = download_url
+    super
   end
 
   private
@@ -112,10 +118,6 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
     GitHub.open_api(release_url)
   end
 
-  def resolve_url_basename_time_file_size(url, timeout: nil)
-    url = download_url
-    super
-  end
 end
 
 class DownloadStrategyDetector
