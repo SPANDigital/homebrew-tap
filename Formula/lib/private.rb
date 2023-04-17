@@ -31,7 +31,8 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   end
 
   def resolve_url_basename_time_file_size(url, timeout: nil)
-    [download_url, "", Time.now, 0, false]
+    url = download_url
+    super
   end
 
   private
@@ -88,7 +89,8 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
   end
 
   def resolve_url_basename_time_file_size(url, timeout: nil)
-    [download_url, "", Time.now, 0, false]
+    url = download_url
+    super
   end
 
   private
@@ -113,7 +115,7 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
 
   def fetch_release_metadata
     release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
-    GitHub.open_api(release_url)
+    GitHub::API.open_rest(release_url, data: nil, data_binary_path: nil, request_method: nil, scopes: [].freeze, parse_json: true)
   end
 
 end
