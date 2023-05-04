@@ -5,21 +5,21 @@
 class Codeassistant < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://github.com/SPANDigital/codeassistant"
-  version "3.0.1"
+  version "3.0.2"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/codeassistant/releases/download/v3.0.1/codeassistant_Darwin_x86_64.tar.gz"
-      sha256 "931dd518347326925f465336a31579b496ea7cee5b304920b56122250ada15a7"
+      url "https://github.com/SPANDigital/codeassistant/releases/download/v3.0.2/codeassistant_Darwin_x86_64.tar.gz"
+      sha256 "d0648fc040c345b0bd61a21aa0ce15b9bb30fc5d52b7f2144e07398bf9325d2d"
 
       def install
         bin.install "codeassistant"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/codeassistant/releases/download/v3.0.1/codeassistant_Darwin_arm64.tar.gz"
-      sha256 "a99f9334f9d726ea6e7bcb17b45076b39b8424fb002c51f8e91b059f6a98cce5"
+      url "https://github.com/SPANDigital/codeassistant/releases/download/v3.0.2/codeassistant_Darwin_arm64.tar.gz"
+      sha256 "5dbd817d6e282922d91957218c7dbd03110c60e2bbfcbf5be0527f8215f1f269"
 
       def install
         bin.install "codeassistant"
@@ -28,17 +28,17 @@ class Codeassistant < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/codeassistant/releases/download/v3.0.1/codeassistant_Linux_x86_64.tar.gz"
-      sha256 "ee0fe3fc63e81fbc0357c5c6881edfa2223c70561cfc8e6f9356f0b63c616b40"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/SPANDigital/codeassistant/releases/download/v3.0.2/codeassistant_Linux_arm64.tar.gz"
+      sha256 "45433b345f581520d40c73bc588fa4f42a644c799c62667f46eb026814e35615"
 
       def install
         bin.install "codeassistant"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/codeassistant/releases/download/v3.0.1/codeassistant_Linux_arm64.tar.gz"
-      sha256 "d03299f191e693b7d44ae935b9b196ebe0ca3f1782f8aaa7829d2ff8764d42f9"
+    if Hardware::CPU.intel?
+      url "https://github.com/SPANDigital/codeassistant/releases/download/v3.0.2/codeassistant_Linux_x86_64.tar.gz"
+      sha256 "e6f240af23a5a35db7784b7369fb0f1aff11e83b786dd9b64865c379bf71144c"
 
       def install
         bin.install "codeassistant"
