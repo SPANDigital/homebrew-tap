@@ -5,20 +5,20 @@
 class Html2md < Formula
   desc "Presidium is a software documentation management system for agile teams"
   homepage "https://github.com/spandigital/presidium"
-  version "0.0.1"
+  version "0.0.2-develop.0"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.1/presidium-html-to-markdown_Darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "26f43753f4415f99b487a6032c8b2461b1e645cdded609e59922f3478883ae2b"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.2-develop.0/presidium-html-to-markdown_Darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "7c5c3afc6d78f4557203ea1f32cd1c7e264f727e88862b0d867d4c75ee3a9bc4"
 
       def install
         bin.install "presidium-html-to-markdown"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.1/presidium-html-to-markdown_Darwin_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "d42ffeeb773e1210e6fd92eff422c5e8a1100c0abdf7324235c971abb4cabe43"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.2-develop.0/presidium-html-to-markdown_Darwin_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "9ba4253fdc05d566ecbc9284c1c40ab124fe1d92b6d435807b180b096fbf1d46"
 
       def install
         bin.install "presidium-html-to-markdown"
@@ -27,17 +27,17 @@ class Html2md < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.1/presidium-html-to-markdown_Linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "7c0e65d55242e1f74125729af712c54110009e133a509de8e9c7a3de0beba7bc"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.2-develop.0/presidium-html-to-markdown_Linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "9cf896dd0f606309d415df0a06c2cd647d1d0fc154918c2e609fda3f1a661165"
 
       def install
         bin.install "presidium-html-to-markdown"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.1/presidium-html-to-markdown_Linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "19fd65962e7f13fd55e04af1ad0b35624f943df29d6b09639349a4e4e766ea41"
+    if Hardware::CPU.intel?
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.2-develop.0/presidium-html-to-markdown_Linux_x86_64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "25c473ef457db54c13d6ce8f82b71db5c81f97bf02824991d2299b4f08b93bc3"
 
       def install
         bin.install "presidium-html-to-markdown"
