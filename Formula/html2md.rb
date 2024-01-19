@@ -5,20 +5,20 @@
 class Html2md < Formula
   desc "Presidium is a software documentation management system for agile teams"
   homepage "https://github.com/spandigital/presidium"
-  version "0.0.3-develop.0"
+  version "0.0.3"
 
   on_macos do
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.3-develop.0/presidium-html-to-markdown_Darwin_arm64.tar.gz"
-      sha256 "ef483110c47b09105ed7944076cbfa32aeac657d83e46d7e0156a92ae035ef1c"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.3/presidium-html-to-markdown_Darwin_arm64.tar.gz"
+      sha256 "db86debfc9516f5d7f979fb7998d726cc8192219217c4b3a7187c2a422981dad"
 
       def install
         bin.install "presidium-html-to-markdown"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.3-develop.0/presidium-html-to-markdown_Darwin_x86_64.tar.gz"
-      sha256 "b1c5a249fe4adaf3b3034695e190bd40f5b8d2cd06411d66e035eecff4078e33"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.3/presidium-html-to-markdown_Darwin_x86_64.tar.gz"
+      sha256 "5071fca0c0b9f626423c22d4c86be0183330cf1cca61d6c6d77619ecc1b412e1"
 
       def install
         bin.install "presidium-html-to-markdown"
@@ -28,16 +28,16 @@ class Html2md < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.3-develop.0/presidium-html-to-markdown_Linux_arm64.tar.gz"
-      sha256 "497a366ca252218e5d04574d4096ddcb3a0e20e17fe1f154402c38475b2ea934"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.3/presidium-html-to-markdown_Linux_arm64.tar.gz"
+      sha256 "c502ca83b1f48708f183af67c00661a12d1ae1536fc3ff6060bc88b4cbd7a1fa"
 
       def install
         bin.install "presidium-html-to-markdown"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.3-develop.0/presidium-html-to-markdown_Linux_x86_64.tar.gz"
-      sha256 "e37184ffefd62436f49145e355efe18fd8184ca5024a8d9d5eb77ba3ebb65ade"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.3/presidium-html-to-markdown_Linux_x86_64.tar.gz"
+      sha256 "4e1722f8e1fae315314373e40e1daa591060b3f8ac4c231c55566f04f64ec257"
 
       def install
         bin.install "presidium-html-to-markdown"
