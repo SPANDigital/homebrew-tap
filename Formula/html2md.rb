@@ -5,20 +5,20 @@
 class Html2md < Formula
   desc "Presidium is a software documentation management system for agile teams"
   homepage "https://github.com/SPANDigital/presidium-html-to-markdown"
-  version "0.0.4-develop.0"
+  version "0.0.4"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.4-develop.0/presidium-html-to-markdown_Darwin_x86_64.tar.gz"
-      sha256 "41daf7322fb073b589c7aeba02e339b203b02aafbd249671c38a538b05ef24da"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.4/presidium-html-to-markdown_Darwin_x86_64.tar.gz"
+      sha256 "e790e8b3c61b4b86c093fc44773b926893673ef868adf8fd1f06b78f7248b2b2"
 
       def install
         bin.install "html2md"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.4-develop.0/presidium-html-to-markdown_Darwin_arm64.tar.gz"
-      sha256 "65e18f6645bc5dd274798e56d216fcf11daf7afc4e816a13a1f9d0059b3b96dd"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.4/presidium-html-to-markdown_Darwin_arm64.tar.gz"
+      sha256 "4bf352623c5c054d17a451238c28819c9cd47202b107b3c1d15a03b5af90075e"
 
       def install
         bin.install "html2md"
@@ -28,16 +28,16 @@ class Html2md < Formula
 
   on_linux do
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.4-develop.0/presidium-html-to-markdown_Linux_arm64.tar.gz"
-      sha256 "c62f5168e28b8b8fa73b6bea913cd2f62c8aa09ceedbd026deb538dcfdd53216"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.4/presidium-html-to-markdown_Linux_arm64.tar.gz"
+      sha256 "e066d4e35ccd72a343efa9e57cc646e95f59f0beee9c1faafec9660ade8704ee"
 
       def install
         bin.install "html2md"
       end
     end
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.4-develop.0/presidium-html-to-markdown_Linux_x86_64.tar.gz"
-      sha256 "3046fa440c88c1d927342890805dde3aab4522f8c117db00bcd529f064b394f7"
+      url "https://github.com/SPANDigital/presidium-html-to-markdown/releases/download/v0.0.4/presidium-html-to-markdown_Linux_x86_64.tar.gz"
+      sha256 "f9ff580fd768f71d27252cfe08f3e0099e2e00f97396e88373229342800e026d"
 
       def install
         bin.install "html2md"
