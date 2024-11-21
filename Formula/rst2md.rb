@@ -5,20 +5,20 @@
 class Rst2md < Formula
   desc ""
   homepage ""
-  version "0.1.0"
+  version "0.1.1"
 
   on_macos do
     on_intel do
-      url "https://github.com/SPANDigital/presidium-rst-to-markdown/releases/download/v0.1.0/presidium-rst-to-markdown_Darwin_x86_64.tar.gz"
-      sha256 "e6f6567bd258a392851554f9144704c97b0398878a92114886458470349645d1"
+      url "https://github.com/SPANDigital/presidium-rst-to-markdown/releases/download/v0.1.1/presidium-rst-to-markdown_Darwin_x86_64.tar.gz"
+      sha256 "51613f183826f3054214e131e74ca14926dbb086598d3da78cf2f530ac2e0be2"
 
       def install
         bin.install "rst2md"
       end
     end
     on_arm do
-      url "https://github.com/SPANDigital/presidium-rst-to-markdown/releases/download/v0.1.0/presidium-rst-to-markdown_Darwin_arm64.tar.gz"
-      sha256 "c9f06365b6a87ad00cb7b5ecd5190fbb49978e7ee81d65307354d3006258a7b2"
+      url "https://github.com/SPANDigital/presidium-rst-to-markdown/releases/download/v0.1.1/presidium-rst-to-markdown_Darwin_arm64.tar.gz"
+      sha256 "2591e8a704c99a2281a709b4a15f0ccdc5b9da5fe64d7cfbd67ce3ffde3672e6"
 
       def install
         bin.install "rst2md"
@@ -29,8 +29,8 @@ class Rst2md < Formula
   on_linux do
     on_intel do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/SPANDigital/presidium-rst-to-markdown/releases/download/v0.1.0/presidium-rst-to-markdown_Linux_x86_64.tar.gz"
-        sha256 "b18b8dcc071a0d87dc571dab1b3493aaa5c04c42524f241b2cdaeaaff901316c"
+        url "https://github.com/SPANDigital/presidium-rst-to-markdown/releases/download/v0.1.1/presidium-rst-to-markdown_Linux_x86_64.tar.gz"
+        sha256 "20e3d518518c09aea8fde352d5cc7d7771a6fed407389d209fc3112befed834e"
 
         def install
           bin.install "rst2md"
@@ -39,8 +39,8 @@ class Rst2md < Formula
     end
     on_arm do
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/SPANDigital/presidium-rst-to-markdown/releases/download/v0.1.0/presidium-rst-to-markdown_Linux_arm64.tar.gz"
-        sha256 "00f1da1ced1f375dd4f66948b5595a2fe1995044945122d4552bdbf0d62aabd7"
+        url "https://github.com/SPANDigital/presidium-rst-to-markdown/releases/download/v0.1.1/presidium-rst-to-markdown_Linux_arm64.tar.gz"
+        sha256 "d9c284d2e10ed4079ceb90a196472f940b04aca20eb7d155f65fa18913253306"
 
         def install
           bin.install "rst2md"
