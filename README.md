@@ -17,8 +17,8 @@ Homebrew tap for SPAN
 
 #### Installing
 
-``brew install span-ops``
+``brew install presidium``
 
 #### Upgrading
 
-``brew upgrade span-ops``
+``brew upgrade presidium``
