@@ -11,7 +11,7 @@ Homebrew tap for SPAN
 
 ## Available formula
 
-### span-ops
+### presidium
 
 [![goreleaser](https://github.com/SPANDigital/span-ops/actions/workflows/release.yml/badge.svg)](https://github.com/SPANDigital/span-ops/actions/workflows/release.yml)
 
