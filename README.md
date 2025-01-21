@@ -13,7 +13,7 @@ Homebrew tap for SPAN
 
 ### presidium
 
-[![goreleaser](https://github.com/SPANDigital/span-ops/actions/workflows/release.yml/badge.svg)](https://github.com/SPANDigital/span-ops/actions/workflows/release.yml)
+[![goreleaser](https://github.com/SPANDigital/presidium/actions/workflows/goreleaser.yml/badge.svg)](https://github.com/SPANDigital/presidium/actions/workflows/goreleaser.yml)
 
 #### Installing
 
