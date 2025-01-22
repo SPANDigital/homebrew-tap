@@ -3,7 +3,7 @@ Homebrew tap for SPAN
 
 ## Adding to your homebrew installation
 
-```brew tap SPANDigital/homebrew-tap```
+```brew tap SPANDigital/tap```
 
 ## Updating homebrew
 
