@@ -5,20 +5,20 @@
 class PresidiumOapi3 < Formula
   desc "Presidium is a software documentation management system for agile teams"
   homepage "https://github.com/spandigital/presidium"
-  version "2.11.12"
+  version "2.11.13"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/presidium-oapi3/releases/download/v2.11.12/presidium-oapi3_Darwin_x86_64.tar.gz"
-      sha256 "fb183601612661eec6cd7e63df790343e266f8aa172bca1cd9aa8ff4749f706d"
+      url "https://github.com/SPANDigital/presidium-oapi3/releases/download/v2.11.13/presidium-oapi3_Darwin_x86_64.tar.gz"
+      sha256 "5877f1346048c20470b50ec56184239f227258459d52a912d4304c17ccd64fa7"
 
       def install
         bin.install "presidium-oapi3"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/presidium-oapi3/releases/download/v2.11.12/presidium-oapi3_Darwin_arm64.tar.gz"
-      sha256 "0cd5a7abeb519d7b14b5570a68701917c86b23fd8205ec3fa23ce156e5a99a2f"
+      url "https://github.com/SPANDigital/presidium-oapi3/releases/download/v2.11.13/presidium-oapi3_Darwin_arm64.tar.gz"
+      sha256 "dc7446609c477db3aa22867a2bcfd51977cf9ea6ccc608fd57eb34b376cffa3b"
 
       def install
         bin.install "presidium-oapi3"
@@ -27,24 +27,18 @@ class PresidiumOapi3 < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/SPANDigital/presidium-oapi3/releases/download/v2.11.12/presidium-oapi3_Linux_x86_64.tar.gz"
-        sha256 "6f8ec7b419aa272e2b203f575ddf3019cc546c293521657e4765edc9feedbe01"
-
-        def install
-          bin.install "presidium-oapi3"
-        end
+    if Hardware::CPU.intel? and Hardware::CPU.is_64_bit?
+      url "https://github.com/SPANDigital/presidium-oapi3/releases/download/v2.11.13/presidium-oapi3_Linux_x86_64.tar.gz"
+      sha256 "451ab7da710889d0067e8a3377c2143132590af1b531cc75b6222d77e0b7e486"
+      def install
+        bin.install "presidium-oapi3"
       end
     end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/SPANDigital/presidium-oapi3/releases/download/v2.11.12/presidium-oapi3_Linux_arm64.tar.gz"
-        sha256 "23535db2cc311bb034848aeed4975300b5b23f4fbc78331e3eb0748768769ded"
-
-        def install
-          bin.install "presidium-oapi3"
-        end
+    if Hardware::CPU.arm? and Hardware::CPU.is_64_bit?
+      url "https://github.com/SPANDigital/presidium-oapi3/releases/download/v2.11.13/presidium-oapi3_Linux_arm64.tar.gz"
+      sha256 "38d6072ca2f4878cb028c739b3ac79d489dce9bb30190d049738d5cc95fa3245"
+      def install
+        bin.install "presidium-oapi3"
       end
     end
   end
