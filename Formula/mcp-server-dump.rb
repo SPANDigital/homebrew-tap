@@ -5,23 +5,23 @@
 class McpServerDump < Formula
   desc "Extract and document MCP server capabilities in various formats"
   homepage "https://github.com/spandigital/mcp-server-dump"
-  version "1.20.2"
+  version "1.21.0"
   license "MIT"
 
   depends_on "git" => :optional
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/mcp-server-dump/releases/download/v1.20.2/mcp-server-dump_Darwin_x86_64.tar.gz"
-      sha256 "78df55cf7b6ecf0470ffda8782056f830239870df175a09bfe3677418f210b1d"
+      url "https://github.com/SPANDigital/mcp-server-dump/releases/download/v1.21.0/mcp-server-dump_Darwin_x86_64.tar.gz"
+      sha256 "e568bd71f0ec09ad4b283e02975432a3189936bbaf965aec3b2918ca5f89efc4"
 
       def install
         bin.install "mcp-server-dump"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/mcp-server-dump/releases/download/v1.20.2/mcp-server-dump_Darwin_arm64.tar.gz"
-      sha256 "2b6d09b466f2b0a4d23462883bf434f0e2d5e4b7beb08ff87a7526b33614fced"
+      url "https://github.com/SPANDigital/mcp-server-dump/releases/download/v1.21.0/mcp-server-dump_Darwin_arm64.tar.gz"
+      sha256 "cd97bfae7e24e7c8b043852d7c9904107713c0fe512a70607da7fc561d7b8227"
 
       def install
         bin.install "mcp-server-dump"
@@ -31,15 +31,15 @@ class McpServerDump < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/mcp-server-dump/releases/download/v1.20.2/mcp-server-dump_Linux_x86_64.tar.gz"
-      sha256 "6248c58850f8268baa4ae8202444ff4639d6e1597d18099e52633bd600907629"
+      url "https://github.com/SPANDigital/mcp-server-dump/releases/download/v1.21.0/mcp-server-dump_Linux_x86_64.tar.gz"
+      sha256 "b614326545231e165dc2e9d94e0615f9cf8b02c8b6dc804e14568dd601b2ddd4"
       def install
         bin.install "mcp-server-dump"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/mcp-server-dump/releases/download/v1.20.2/mcp-server-dump_Linux_arm64.tar.gz"
-      sha256 "2a3ac90982359eb70b8eb3a89983b5a4f26740c7897d31922a69b94e99b4c67d"
+      url "https://github.com/SPANDigital/mcp-server-dump/releases/download/v1.21.0/mcp-server-dump_Linux_arm64.tar.gz"
+      sha256 "8ca901e8c3a87a73f085f5ab04bb88f50acbe461f1a039ca012e768207653f0a"
       def install
         bin.install "mcp-server-dump"
       end
