@@ -3,7 +3,7 @@ cask "token-visualizer" do
   name "token-visualizer"
   desc "Modern CLI tool for visualizing and analyzing LLM tokens"
   homepage "https://github.com/SPANDigital/token-visualizer"
-  version "0.3.0"
+  version "0.3.1"
 
   livecheck do
     skip "Auto-generated on release."
@@ -14,22 +14,22 @@ cask "token-visualizer" do
   on_macos do
     on_intel do
       url "https://github.com/SPANDigital/token-visualizer/releases/download/v#{version}/token-visualizer_#{version}_Darwin_x86_64.tar.gz"
-      sha256 "081cdaff7193d405d8eec795651d0cbcc7413bd0ce381ff998e5498a6378f17e"
+      sha256 "e2dc074025a3db3a5c9abb654ce0466485269eb102a3325c8d090ef7d860d5c5"
     end
     on_arm do
       url "https://github.com/SPANDigital/token-visualizer/releases/download/v#{version}/token-visualizer_#{version}_Darwin_arm64.tar.gz"
-      sha256 "d6dff916ebeb4b840ab871b716c549d5a862c32fa4d0f0bfca850d17f05e28c9"
+      sha256 "36ab36b567cab0c4216e44a6c7917e04e77d57cb3c4329be0c7c1916b6e13c5b"
     end
   end
 
   on_linux do
     on_intel do
       url "https://github.com/SPANDigital/token-visualizer/releases/download/v#{version}/token-visualizer_#{version}_Linux_x86_64.tar.gz"
-      sha256 "9869cc995059ef85dfbe0a1de9afb993bbee5ba370a1a98eaa58e8e307b9c4d8"
+      sha256 "19194e6c573ccc53a3a70cc904c1aaa8baab4cd2c9257cce81fef2369b6c0d0b"
     end
     on_arm do
       url "https://github.com/SPANDigital/token-visualizer/releases/download/v#{version}/token-visualizer_#{version}_Linux_arm64.tar.gz"
-      sha256 "d6625d657c6839614930e4c8773c1e0a36ded56789d8bacab326d66cc7caaa02"
+      sha256 "1bce38010816cbda5e41469143bf672e1fafc85eb0b288d66fe7347cca44a3b8"
     end
   end
 
