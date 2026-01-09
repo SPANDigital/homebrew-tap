@@ -10,7 +10,7 @@ class Codeblocks < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/SPANDigital/codeblocks/releases/download/v0.1.0/codeblocks_Darwin_x86_64.tar.gz"
-      sha256 "7be4d58fec824b44f309380718145b907a89ab8bd8240ea15d43304646c11080"
+      sha256 "f700e8bb75b5b48c39339ca30e1caaa174ac7dfc55d5e124c1e51269eb07007d"
 
       def install
         bin.install "codeblocks"
@@ -18,7 +18,7 @@ class Codeblocks < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/SPANDigital/codeblocks/releases/download/v0.1.0/codeblocks_Darwin_arm64.tar.gz"
-      sha256 "8448aa13af8ae11dfdcd7ba7fb0c628047769c7d0db862c36e715a9c056dea0f"
+      sha256 "128c976682c5e17cd9aa1dbb930bd56600475959daa9533a74819af42e38ad94"
 
       def install
         bin.install "codeblocks"
@@ -29,14 +29,14 @@ class Codeblocks < Formula
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/SPANDigital/codeblocks/releases/download/v0.1.0/codeblocks_Linux_x86_64.tar.gz"
-      sha256 "7154ae490f3c01df08fde4cf8241c3ba6e9729f5028eea3798bb8701ce43daad"
+      sha256 "403d75555326d26b2f2c80f37998ab583f0073fe800663f64ab156edb1e697e5"
       def install
         bin.install "codeblocks"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/SPANDigital/codeblocks/releases/download/v0.1.0/codeblocks_Linux_arm64.tar.gz"
-      sha256 "07aeab12305439dafa3b629f18ba640b496cce4538907f10162c6d6a5684d4db"
+      sha256 "19e232bacdb2d83dd2d8189ed6d81c79cf5e5abe116af58ae910433a1ee8809e"
       def install
         bin.install "codeblocks"
       end
