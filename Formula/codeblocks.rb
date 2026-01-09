@@ -5,20 +5,20 @@
 class Codeblocks < Formula
   desc "Software to create fast and easy drum rolls."
   homepage "https://github.com/SPANDigital/codeblocks"
-  version "0.1.1"
+  version "0.2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/SPANDigital/codeblocks/releases/download/v0.1.1/codeblocks_Darwin_x86_64.tar.gz"
-      sha256 "ad9ef4edbefbb991ac525542b0e3e0c298f7fb4177cadcab5491c95586a42bc8"
+      url "https://github.com/SPANDigital/codeblocks/releases/download/v0.2.0/codeblocks_Darwin_x86_64.tar.gz"
+      sha256 "e61f25a97fa7acfdd42a690e77cccfcc09d7755b5e7b0007d79fa961dd7cb109"
 
       def install
         bin.install "codeblocks"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/SPANDigital/codeblocks/releases/download/v0.1.1/codeblocks_Darwin_arm64.tar.gz"
-      sha256 "ffdbacbe6ff185dbf73517276cce3d6526775d6f69d18e16ff9be273076d6898"
+      url "https://github.com/SPANDigital/codeblocks/releases/download/v0.2.0/codeblocks_Darwin_arm64.tar.gz"
+      sha256 "769f9895e9c8bfa53a7605f8b8ce45a3260f76e36429b868a335139a86ceb141"
 
       def install
         bin.install "codeblocks"
@@ -28,15 +28,15 @@ class Codeblocks < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/codeblocks/releases/download/v0.1.1/codeblocks_Linux_x86_64.tar.gz"
-      sha256 "a731a59eae2bbd9fe31d892c66d4bebd0d60b0d2305376cd5bb4ec78bfcd516b"
+      url "https://github.com/SPANDigital/codeblocks/releases/download/v0.2.0/codeblocks_Linux_x86_64.tar.gz"
+      sha256 "2f40ebb97dc1db2c303e04d39160ab0b11e0018041ed4276af7bc74e1f10a85f"
       def install
         bin.install "codeblocks"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/SPANDigital/codeblocks/releases/download/v0.1.1/codeblocks_Linux_arm64.tar.gz"
-      sha256 "aa3d2c9d14d43915d35687ac2ea0e06b0907807359a69cf1f7a3416be4a3f50c"
+      url "https://github.com/SPANDigital/codeblocks/releases/download/v0.2.0/codeblocks_Linux_arm64.tar.gz"
+      sha256 "77ba4396585d6eb3d1459241a94b0e6562cd242fa176e35e3b73f50e2d6bfea9"
       def install
         bin.install "codeblocks"
       end
