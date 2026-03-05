@@ -43,11 +43,31 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
 
   def set_github_token
     @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
+    @github_token ||= fetch_gh_auth_token
     unless @github_token
-      raise CurlDownloadStrategyError, "Environmental variable HOMEBREW_GITHUB_API_TOKEN is required."
+      raise CurlDownloadStrategyError, <<~EOS
+        No GitHub token found. Please do one of the following:
+          - Set the HOMEBREW_GITHUB_API_TOKEN environment variable
+          - Install the GitHub CLI and run: gh auth login
+      EOS
     end
 
     validate_github_repository_access!
+  end
+
+  def fetch_gh_auth_token
+    token = `gh auth token 2>/dev/null`.strip
+    return token unless token.empty?
+
+    # gh is available but not logged in — try interactive login
+    if system("which", "gh", out: File::NULL, err: File::NULL)
+      ohai "No GitHub token found. Attempting to log in with GitHub CLI..."
+      system("gh", "auth", "login")
+      token = `gh auth token 2>/dev/null`.strip
+      return token unless token.empty?
+    end
+
+    nil
   end
 
   def validate_github_repository_access!
