@@ -42,8 +42,8 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   end
 
   def set_github_token
-    @github_token = ENV["HOMEBREW_GITHUB_API_TOKEN"]
-    @github_token ||= fetch_gh_auth_token
+    @github_token = fetch_gh_auth_token
+    @github_token ||= ENV["HOMEBREW_GITHUB_API_TOKEN"]
     unless @github_token
       raise CurlDownloadStrategyError, <<~EOS
         No GitHub token found. Please do one of the following:
