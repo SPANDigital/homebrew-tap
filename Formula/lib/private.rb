@@ -3,11 +3,12 @@ require "download_strategy"
 # GitHubPrivateRepositoryDownloadStrategy downloads contents from GitHub
 # Private Repository. To use it, add
 # `:using => :github_private_repo` to the URL section of
-# your formula. This download strategy uses GitHub access tokens (in the
-# environment variables `HOMEBREW_GITHUB_API_TOKEN`) to sign the request.  This
-# strategy is suitable for corporate use just like S3DownloadStrategy, because
-# it lets you use a private GitHub repository for internal distribution.  It
-# works with public one, but in that case simply use CurlDownloadStrategy.
+# your formula. This download strategy authenticates using a GitHub token
+# obtained from the GitHub CLI (`gh auth token`) or, as a fallback, the
+# `HOMEBREW_GITHUB_API_TOKEN` environment variable. This strategy is suitable
+# for corporate use just like S3DownloadStrategy, because it lets you use a
+# private GitHub repository for internal distribution. It works with public
+# repositories too, but in that case simply use CurlDownloadStrategy.
 class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
   require "utils/formatter"
   require "utils/github"
@@ -90,7 +91,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     # We only handle HTTPNotFoundError here,
     # because AuthenticationFailedError is handled within util/github.
     message = <<~EOS
-      HOMEBREW_GITHUB_API_TOKEN can not access the repository: #{@owner}/#{@repo}
+      GitHub token can not access the repository: #{@owner}/#{@repo}
       This token may not have permission to access the repository or the url of formula may be incorrect.
     EOS
     raise CurlDownloadStrategyError, message
@@ -101,8 +102,7 @@ end
 # GitHubPrivateRepositoryReleaseDownloadStrategy downloads tarballs from GitHub
 # Release assets. To use it, add
 # `:using => GitHubPrivateRepositoryReleaseDownloadStrategy` to the URL section of
-# your formula. This download strategy uses GitHub access tokens (in the
-# environment variables HOMEBREW_GITHUB_API_TOKEN) to sign the request.
+# your formula. Authentication is handled by the parent class (see above).
 class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDownloadStrategy
   def initialize(url, name, version, **meta)
     super
