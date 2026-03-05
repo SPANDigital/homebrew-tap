@@ -55,17 +55,30 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     validate_github_repository_access!
   end
 
+  def find_gh_executable
+    # Homebrew's Ruby environment may not include the user's full PATH,
+    # so check common locations explicitly.
+    search_paths = ENV["PATH"].to_s.split(File::PATH_SEPARATOR)
+    search_paths.concat(%w[/opt/homebrew/bin /usr/local/bin /usr/bin])
+    search_paths.each do |dir|
+      gh = File.join(dir, "gh")
+      return gh if File.executable?(gh)
+    end
+    nil
+  end
+
   def fetch_gh_auth_token
-    token = `gh auth token 2>/dev/null`.strip
+    gh = find_gh_executable
+    return nil unless gh
+
+    token = `#{gh} auth token 2>/dev/null`.strip
     return token unless token.empty?
 
     # gh is available but not logged in — try interactive login
-    if system("which", "gh", out: File::NULL, err: File::NULL)
-      ohai "No GitHub token found. Attempting to log in with GitHub CLI..."
-      system("gh", "auth", "login")
-      token = `gh auth token 2>/dev/null`.strip
-      return token unless token.empty?
-    end
+    ohai "No GitHub token found. Attempting to log in with GitHub CLI..."
+    system(gh, "auth", "login")
+    token = `#{gh} auth token 2>/dev/null`.strip
+    return token unless token.empty?
 
     nil
   end
