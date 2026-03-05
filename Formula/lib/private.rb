@@ -48,8 +48,8 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     unless @github_token
       raise CurlDownloadStrategyError, <<~EOS
         No GitHub token found. Please do one of the following:
-          - Set the HOMEBREW_GITHUB_API_TOKEN environment variable
           - Install the GitHub CLI and run: gh auth login
+          - Set the HOMEBREW_GITHUB_API_TOKEN environment variable       
       EOS
     end
 
