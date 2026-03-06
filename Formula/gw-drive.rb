@@ -6,21 +6,21 @@ require_relative "lib/private"
 class GwDrive < Formula
   desc "Read-only Google Workspace Drive CLI and MCP server"
   homepage "https://github.com/spandigital/gw-drive-cli"
-  version "0.1.21"
+  version "0.1.22"
   license "Apache-2.0"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/spandigital/gw-drive-cli/releases/download/v0.1.21/gw-drive_0.1.21_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "3deb94cc03bb8d0f6e73caedc008ab98d7e6a3905716e146f97ed5d3fdd9e8d5"
+      url "https://github.com/spandigital/gw-drive-cli/releases/download/v0.1.22/gw-drive_0.1.22_darwin_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "395bcbbaf74cd4419ceddaf642af1b1f5953bf575e544ed252ca63514759adfd"
 
       define_method(:install) do
         bin.install "gw-drive"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/spandigital/gw-drive-cli/releases/download/v0.1.21/gw-drive_0.1.21_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "f6dc142628a2c2ce6956b2080ec413f69c136012ba53fe5e9052d439cce1e678"
+      url "https://github.com/spandigital/gw-drive-cli/releases/download/v0.1.22/gw-drive_0.1.22_darwin_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "73815b501a273d8f576a9e56f7fd6a13f932a1bcd1538d96f2edb70d61611865"
 
       define_method(:install) do
         bin.install "gw-drive"
@@ -30,15 +30,15 @@ class GwDrive < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spandigital/gw-drive-cli/releases/download/v0.1.21/gw-drive_0.1.21_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "ea2a9e532274181b09c39f2234e0365f37fe306e33c7ead2917b9a3bfe70cc18"
+      url "https://github.com/spandigital/gw-drive-cli/releases/download/v0.1.22/gw-drive_0.1.22_linux_amd64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "b30c6897f4e4b64626ff55f662e44140b37085d8c6a50ebec852624b82a62eba"
       define_method(:install) do
         bin.install "gw-drive"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/spandigital/gw-drive-cli/releases/download/v0.1.21/gw-drive_0.1.21_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
-      sha256 "5345ea9dc42e509c4546ea628a9def344be7286daef6d06b46fb34852e350683"
+      url "https://github.com/spandigital/gw-drive-cli/releases/download/v0.1.22/gw-drive_0.1.22_linux_arm64.tar.gz", using: GitHubPrivateRepositoryReleaseDownloadStrategy
+      sha256 "922eda6f2521df176a4e23a29e770b89f735ddacc99e0ab2e6d561b9a92f7b48"
       define_method(:install) do
         bin.install "gw-drive"
       end
