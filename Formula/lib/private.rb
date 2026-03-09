@@ -48,7 +48,7 @@ class GitHubPrivateRepositoryDownloadStrategy < CurlDownloadStrategy
     unless @github_token
       raise CurlDownloadStrategyError, <<~EOS
         No GitHub token found. Please do one of the following:
-          - Install the GitHub CLI and run: gh auth login
+        - Install the GitHub CLI and run: gh auth login
           - Set the HOMEBREW_GITHUB_API_TOKEN environment variable       
       EOS
     end
@@ -140,15 +140,29 @@ class GitHubPrivateRepositoryReleaseDownloadStrategy < GitHubPrivateRepositoryDo
 
   def resolve_asset_id
     release_metadata = fetch_release_metadata
-    assets = release_metadata["assets"].select { |a| a["name"] == @filename }
-    raise CurlDownloadStrategyError, "Asset file not found." if assets.empty?
+    assets = release_metadata["assets"]
+    raise CurlDownloadStrategyError, "No assets found in release #{@tag} for #{@owner}/#{@repo}." unless assets
 
-    assets.first["id"]
+    matching = assets.select { |a| a["name"] == @filename }
+    raise CurlDownloadStrategyError, "Asset file not found." if matching.empty?
+
+    matching.first["id"]
   end
 
   def fetch_release_metadata
+    require "utils/curl"
     release_url = "https://api.github.com/repos/#{@owner}/#{@repo}/releases/tags/#{@tag}"
-    GitHub::API.open_rest(release_url, data: nil, data_binary_path: nil, request_method: nil, scopes: [].freeze, parse_json: true)
+    result = Utils::Curl.curl_output(
+      "--header", "Authorization: token #{@github_token}",
+      "--header", "Accept: application/vnd.github+json",
+      "--location",
+      release_url,
+    )
+    unless result.status.success?
+      raise CurlDownloadStrategyError,
+        "Failed to fetch release metadata for #{@tag} from #{@owner}/#{@repo}"
+    end
+    JSON.parse(result.stdout)
   end
 
 end
